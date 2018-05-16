@@ -1,4 +1,4 @@
 *~
 *.o
-*.mex*
+.DS_Store
 +Cliquer/cliquer/cl
