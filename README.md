@@ -10,6 +10,18 @@ Usage
 
 1. Ensure that the `+Cliquer` directory is a subdirectory of a directory in your MATLAB path.  Do *not* add the `+Cliquer` directory to your MATLAB path.
 
-2. Execute the MATLAB command `Cliquer.Compile()` to compile both the C program Cliquer and the MEX interface.  This compile function is provided for convenience but basically just compiles Cliquer, compiles the MEX function, and then moves the MEX function into the package directory.
+2. Execute make.m from within this repository to compile the mex files
+```MATLAB
+% Running make.m
+make
+```
 
 3. Cliquer's functionality can now be accessed with the command `Cliquer.FindAll`, and documentation can be accessed with `help Cliquer.FindAll`.
+
+4. Check installation using the following example
+```MATLAB
+A = eye(10);
+[ncliques mtxcliques] = Cliquer.FindAll(A,2,2,false,1000);
+```
+
+5. Be sure to make check that your input is a symmetric matrix using `issymmetric(A)`. Otherwise running this program results in a segmentation fault. 
